@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>{% block title %}Titre par défaut{% endblock %}</title>
+		<link rel="stylesheet" href="{{ url_for('static', path='index.css') }}" />
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		{% block head_extra %}{% endblock %}
+	</head>
+	<body class="bg-gray-100 p-6">
+		<header class="mb-20">{% include "includes/navbar.html" %}</header>
+		{% block content %}{% endblock %}
+
+		<script src="{{ url_for('static', path='index.js') }}"></script>
+	</body>
+</html>
